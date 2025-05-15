@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Climate Action Experience</title>
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* 🌱 Navbar background and link styles */
+.custom-navbar {
+  background-color: #537D5D; /* Deep teal */
+}
+
+.custom-link {
+  color: white;
+  font-weight: 500;
+  margin: 0 12px;
+  position: relative;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.custom-link:hover {
+  color: #D2D0A0;
+}
+
+/* Underline effect */
+.custom-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background-color: #D2D0A0;
+  transition: width 0.3s ease;
+}
+
+.custom-link:hover::after {
+  width: 100%;
+}
+
+/* 📩 Contact Us BUTTON (not nav link) */
+.contact-btn {
+  background-color: #D2D0A0;
+  color: #004d40;
+  font-weight: bold;
+  border: none;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-btn:hover {
+  background-color: #d7d59a;
+  transform: scale(1.05);
+}
+
+/* 🌍 Layout sections */
+.container {
+  display: flex;
+  width: 100vw;
+  /* height: 100vh; */
+}
+
+.image-container {
+      position: relative;
+      width: 100%;
+      height: 400px; 
+      width: 400px;
+    }
+    .image {
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: all 2s ease;
+      max-width: 100%;
+      height: 350px; 
+      width: 350px; 
+      border-radius: 30px;
+    }
+    .slide-in {
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+    .fade-out {
+      opacity: 0;
+    }
+
+    
+
+
+
+
+
+
+
+.left, .right {
+  flex: 1;
+  padding: 40px;
+  /* height: 100%; */
+}
+
+.left {
+  background-color: #d7d59a; /* Light eco-mint */
+  overflow-y: auto;
+  border-right: 2px solid black;
+}
+
+.right {
+  background-color: #d4d28f; /* Light cyan */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  /* color: white; */
+}
+
+#p1{
+  color: ;
+}
+
+
+
+
+
+
+
+
+
+
+.animation {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 1em;
+  background-color: #537D5D;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #004d40;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea {
+  padding: 10px;
+  font-size: 1em;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+      .earth-container {
+        text-align: center;
+        animation: fadeIn 0.8s ease-in-out;
+      }
+
+      .earth-img {
+        width: 200px;
+        animation: zoomIn 0.8s ease;
+      }
+
+      .convert-btn {
+        margin-top: 10px;
+        padding: 10px 18px;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .convert-btn:hover {
+        background-color: #3e9143;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes zoomIn {
+        from { transform: scale(0.9); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+      }
+
+
+
+.activity-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.activity-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.activity {
+  width: 150px;
+  text-align: center;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: grab;
+  transition: transform 0.2s ease;
+}
+
+.activity img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.activity:hover {
+  transform: scale(1.05);
+}
+
+.activity p {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.drop-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  min-height: 150px;
+  padding: 20px;
+  border: 2px dashed #666;
+  border-radius: 10px;
+  background-color: #fdf7e3;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+.drop-box {
+  flex: 1;
+  min-height: 250px;
+  padding: 20px;
+  border: 2px dashed #666;
+  border-radius: 10px;
+  background-color: #fdf7e3;
+  margin-left: 20px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+/* 🔄 Drag-and-drop layout */
+.drag-items {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.drag-item {
+  font-size: 2rem;
+  cursor: grab;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  width: 60px;
+  text-align: center;
+  font-size: 2rem;
+  cursor: grab;
+  margin: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.drag-item:hover {
+  transform: scale(1.2); /* Slightly enlarge */
+  box-shadow: 0 4px 12px rgba(0, 128, 0, 0.3); /* Greenish glow */
+}
+
+/* Drop zones side-by-side */
+.drop-zone {
+  border: 2px dashed #999;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  font-size: 1.2rem;
+  min-height: 100px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🧠 Quiz section */
+.quiz-card {
+  border: 2px solid #4db6ac;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+.quiz-card button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #00695c;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quiz-card button:hover {
+  background-color: #004d40;
+}
+
+.feedback {
+  margin-top: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.correct {
+  color: #2ecc71; /* Eco green */
+}
+
+.incorrect {
+  color: #e57373; /* Soft red */
+}
+
+.hidden {
+  display: none;
+}
+
+/* Container styling for centering the card */
+.impact-card-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Main card styling */
+.impact-card {
+  width: 320px;
+  background-color: #e0f7fa; /* light teal */
+  border: 2px solid #00acc1; /* cyan border */
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect (optional) */
+.impact-card:hover {
+  transform: scale(1.03);
+}
+
+/* Card image */
+.impact-card img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Hidden information (revealed on click) */
+.hidden-info {
+  display: none;
+  font-size: 0.95rem;
+  color: #004d40; /* dark teal */
+  margin-top: 10px;
+}
+
+/* Optional heading and description styling */
+.impact-heading {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.impact-description {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+
+.circle-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  width: 100%;
+}
+
+.circle-container {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 4px solid #a0d2eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background: #f0faff;
+}
+
+.effect-card {
+  text-align: center;
+  padding: 12px;
+  border-radius: 20px;
+  border: 2px solid #007acc;
+  background: #fff;
+  transition: transform 0.4s ease, background 0.4s;
+  cursor: pointer;
+  width: 220px;
+}
+
+.effect-card:hover {
+  transform: scale(1.03);
+}
+
+.effect-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.effect-card .info {
+  display: none;
+  margin-top: 10px;
+}
+
+.effect-card.clicked .info,
+.effect-card .info.show {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+/* 🔁 Responsive layout adjustments */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    justify-content: flex-start !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column-reverse; /* 🔁 Show .right before .left */
+  }
+
+  .left, .right {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .image-container {
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .image-container img {
+    position: static;
+    transform: none;
+    opacity: 1;
+    width: 90%;
+    max-width: 300px;
+  }
+
+  video {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+
+
+  .circle-container {
+    width: 90%;
+    height: auto;
+    border-radius: 20px;
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .impact-card, .quiz-card {
+    width: 90% !important;
+  }
+
+  .activity-items {
+    justify-content: center;
+  }
+
+  .drop-box {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .drop-zone {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .earth-img {
+    width: 140px;
+  }
+
+  .navbar .contact-btn {
+    margin-top: 10px;
+  }
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  .container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .left, .right {
+    width: 100%;
+    padding: 25px;
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .image-container img {
+    position: relative !important;   /* ✅ no absolute on tablet */
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    max-width: 80%;
+    height: auto;
+    border-radius: 20px;
+    margin: 0 auto;
+  }
+
+  video {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+
+
+/* ✅ Small Desktops: 1025px–1200px */
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .left, .right {
+    flex: 1;
+    padding: 40px;
+  }
+
+  .image-container img {
+    width: 300px;
+    height: 300px;
+  }
+
+  video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg custom-navbar px-3">
+  <a class="navbar-brand d-flex align-items-center" href="#">
+    <img src="logo.png" alt="Logo" width="40" height="40">
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+    <ul class="navbar-nav mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link custom-link" href="#">Yujir</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link custom-link" href="#about">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link custom-link" href="#services">Services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link custom-link" href="#learn">Learn</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link custom-link" href="#contact">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="d-flex ms-auto">
+    <a href="#contact" class="btn contact-btn">Contact Us</a>
+  </div>
+</nav>
+
+
+
+<div class="container">
+  <div class="left" id="leftSide">
+    <div class="animation" id="earthAnimation">
+      <video width="560" height="350"  controls >
+        <source src="first_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <br>
+    <br>
+
+<!-- Add this below your video -->
+    <div class="video-caption" style="text-align: center; margin-top: 1rem;">
+      <p style="font-size: 1.2rem; font-style: italic;"><strong>“This is not just a video — it's a mirror of our reality.”</strong></p>
+      <p style="font-size: 1.1rem;">🌿 Let’s rebuild what we’ve lost, together.<br>Tap <strong>Start Journey</strong> and be the change Earth needs.</p>
+    </div>
+
+  </div>
+
+  <div class="right">
+      <div class="image-container">
+          <img src="download (1).jpg" class="image" id="img1">
+          <img src="download.jpg" class="image" id="img2">
+      </div>
+
+
+
+
+    <h1>🌍 Climate Change Mission</h1>
+    <p id="p1"><b>You're seeing CO₂ effects. Click below to begin making Earth green again.</b></p>
+    <button onclick="startMission()">Start Journey</button>
+  </div>
+</div>
+
+
+
+<script>
+
+const img1 = document.getElementById("img1");
+const img2 = document.getElementById("img2");
+
+const width = window.innerWidth;
+
+if (width > 1024) {
+  // Desktop: animate img1 to img2
+  setTimeout(() => {
+    img1.classList.add("slide-in");
+  }, 500);
+
+  setTimeout(() => {
+    img1.classList.add("hidden");
+    img2.classList.add("slide-in");
+  }, 4000);
+} else {
+  // Mobile and Tablet: show only img2
+  img1.style.display = "none";
+  img2.classList.add("slide-in"); // If you want no animation, remove this line
+}
+
+
+
+
+
+  let left = document.getElementById("leftSide");
+
+  function startMission() {
+    document.getElementById("earthAnimation").remove();
+    showEarthConversionStep();
+  }
+
+  function showEarthConversionStep() {
+    let earthHTML = 
+      `<div style="text-align:center;" class="earth-container">
+        <img class="earth-img" src="Earth.png" width="200">
+        <p><strong>🌿 Change Earth to Full Green</strong></p>
+        <button onclick="showForm()">Convert Earth</button>
+      </div>`;
+    left.innerHTML = earthHTML;
+  }
+
+  function showForm() {
+    left.innerHTML = 
+      `<h2>🌱 Join the Mission</h2>
+      <form id="contactForm" onsubmit="event.preventDefault(); submitForm();">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Why do you care about Earth?" required></textarea>
+        <button type="submit">Submit</button>
+      </form>`;
+  }
+
+  function submitForm() {
+    left.innerHTML = `<h3>🎉 Thank you! Let's sort what's good and bad for Earth:</h3>`;
+    showcollectActivity();
+  }
+
+  function showcollectActivity(){
+    left.innerHTML = `
+  <h3>🎉 Thank you! Let's sort what's good and bad for Earth:</h3>
+  <p>🧠 You know from which activities climate change happens. Please sort them:</p> 
+
+  <div class="activity-container">
+    <div class="activity-items" id="activityItems">
+      <div class="activity" draggable="true" ondragstart="drag(event)" id="fossilFuels">
+        <img src="images/fossil-fuels.jpg" alt="Burning Fossil Fuels" />
+        <p>Burning Fossil Fuels</p>
+      </div>
+      <div class="activity" draggable="true" ondragstart="drag(event)" id="urbanization">
+        <img src="images/construction.jpg" alt="Construction & Urbanization" />
+        <p>Construction & Urbanization</p>
+      </div>
+      <div class="activity" draggable="true" ondragstart="drag(event)" id="transport">
+        <img src="images/transport.jpg" alt="Heavy Transport" />
+        <p>Heavy Transport</p>
+      </div>
+      <div class="activity" draggable="true" ondragstart="drag(event)" id="agriculture">
+        <img src="images/agriculture.jpg" alt="Over-farming" />
+        <p>Over-farming</p>
+      </div>
+      <div class="activity" draggable="true" ondragstart="drag(event)" id="treePlanting">
+        <img src="images/tree-planting.jpg" alt="Tree Planting" />
+        <p>Tree Planting</p>
+      </div>
+      <div class="activity" draggable="true" ondragstart="drag(event)" id="cycling">
+        <img src="images/cycling.jpg" alt="Cycling" />
+        <p>Cycling</p>
+      </div>
+    </div>
+
+    <div id="dropBox" class="drop-box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <p>⬇️ Drop the harmful activities here ⬇️</p>
+    </div>
+  </div>
+
+  <button id="nextToQuiz" class="hidden" onclick="showQuiz()">Take Next Step → Quiz</button>
+`;
+
+  }
+
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  const data = ev.dataTransfer.getData("text");
+  const droppedElement = document.getElementById(data);
+
+  // Only allow drop inside drop-box
+  if (ev.target.classList.contains("drop-box")) {
+    ev.target.appendChild(droppedElement);
+    checkIfAllHarmfulDropped(); // Check if harmful activities are all dropped
+  }
+}
+
+// List of harmful activity IDs
+const harmfulActivities = ["fossilFuels", "urbanization", "transport", "agriculture"];
+
+function checkIfAllHarmfulDropped() {
+  const allDropped = harmfulActivities.every(id => {
+    const el = document.getElementById(id);
+    return el && el.parentElement.id === "dropBox";
+  });
+
+  if (allDropped) {
+    document.getElementById("nextToQuiz").classList.remove("hidden");
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // function showDragDropActivity() {
+  //   left.innerHTML += 
+  //     `<div class="drag-items" id="dragContainer">
+  //       <div class="drag-item" draggable="true" ondragstart="drag(event)" id="bike">🚲</div>
+  //       <div class="drag-item" draggable="true" ondragstart="drag(event)" id="car">🚗</div>
+  //       <div class="drag-item" draggable="true" ondragstart="drag(event)" id="cloud">🌫️</div>
+  //       <div class="drag-item" draggable="true" ondragstart="drag(event)" id="solar">☀️</div>
+  //       <div class="drag-item" draggable="true" ondragstart="drag(event)" id="factory">🏭</div>
+  //       <div class="drag-item" draggable="true" ondragstart="drag(event)" id="bikeShare">🚴‍♀️</div>
+  //       <div class="drag-item" draggable="true" ondragstart="drag(event)" id="electricCar">🚙</div>
+  //     </div>
+  //     <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" id="sustainable">
+  //       ✅ Sustainable
+  //     </div>
+  //     <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" id="harmful">
+  //       ❌ Harmful
+  //     </div>
+  //     <button id="nextToQuiz" class="hidden" onclick="showQuiz()">Take Next Step → Quiz</button>`;
+  // }
+
+  // function allowDrop(ev) {
+  //   ev.preventDefault();
+  // }
+
+  // function drag(ev) {
+  //   ev.dataTransfer.setData("text", ev.target.id);
+  // }
+
+  // function drop(ev) {
+  //   ev.preventDefault();
+  //   let data = ev.dataTransfer.getData("text");
+  //   ev.target.appendChild(document.getElementById(data));
+  //   checkIfAllDropped();
+  // }
+
+  // function checkIfAllDropped() {
+  //   const items = ["bike", "car", "cloud", "solar", "factory", "bikeShare", "electricCar"];
+  //   const dropped = items.every(id => document.getElementById(id).parentElement.classList.contains("drop-zone"));
+  //   if (dropped) {
+  //     document.getElementById("nextToQuiz").classList.remove("hidden");
+  //   }
+  // }
+
+const quizQuestions = [
+  {
+    question: "🌡️ What is a major human-driven cause of rising CO₂ emissions?",
+    options: ["Planting trees", "Burning fossil fuels", "Ocean currents"],
+    answer: 1
+  },
+  {
+    question: "📈 What does an increase in atmospheric CO₂ lead to?",
+    options: ["Global cooling", "Decrease in sea levels", "Additional greenhouse effect"],
+    answer: 2
+  },
+  {
+    question: "🔁 What role do carbon sinks play in the climate system?",
+    options: ["Emit carbon", "Store and absorb CO₂", "Increase acidification"],
+    answer: 1
+  },
+  {
+    question: "🌊 What does increased CO₂ in the atmosphere cause in the ocean?",
+    options: ["Ocean warming", "Ocean acidification", "Increased salinity"],
+    answer: 1
+  },
+  {
+    question: "🦪 What problem does ocean acidification create for marine life?",
+    options: ["Helps fish breathe", "Causes coral bleaching", "Makes calcification harder for shells"],
+    answer: 2
+  },
+  {
+    question: "❄️ What does melting permafrost release?",
+    options: ["Oxygen", "Methane and CO₂", "Water vapor only"],
+    answer: 1
+  },
+  {
+    question: "🔬 Which organisms are sensitive to ocean acidification?",
+    options: ["Jellyfish", "Pteropods and coccolithophores", "Sharks"],
+    answer: 1
+  },
+  {
+    question: "🧬 How does reduced calcification affect biodiversity?",
+    options: ["Improves food webs", "Destroys marine habitats", "No impact"],
+    answer: 1
+  },
+
+];
+
+
+  let currentQuiz = 0;
+
+  function showQuiz() {
+    showQuizCard(currentQuiz);
+  }
+
+  function showQuizCard(index) {
+    const q = quizQuestions[index];
+    left.innerHTML = 
+      `<h2>🌍 Climate Knowledge Quiz</h2>
+      <p class="subtitle">
+        Take this quiz to test your understanding of CO₂ emissions, carbon sinks, oceans, and climate science.
+      </p>
+      <div class="quiz-card">
+        <h3>${q.question}</h3>
+        ${q.options.map((opt, i) => 
+          `<button onclick="checkAnswer(${index}, ${i})">${opt}</button>`
+        ).join("")}
+        <div id="feedback-${index}" class="feedback"></div> 
+      </div>`;
+  }
+
+function checkAnswer(qIndex, chosen) {
+  const isCorrect = chosen === quizQuestions[qIndex].answer;
+
+  // Get the feedback container
+  const feedbackContainer = document.getElementById(`feedback-${qIndex}`);
+
+  if (isCorrect) {
+    feedbackContainer.innerHTML = "Correct! 🌱";
+    feedbackContainer.classList.add("correct");
+    feedbackContainer.classList.remove("incorrect");
+  } else {
+    const correctOption = quizQuestions[qIndex].options[quizQuestions[qIndex].answer];
+    feedbackContainer.innerHTML = `Oops! ❌ The correct answer is: <strong>${correctOption}</strong>`;
+    feedbackContainer.classList.add("incorrect");
+    feedbackContainer.classList.remove("correct");
+  }
+
+  // Move to next question after 1 second
+  currentQuiz++;
+  if (currentQuiz < quizQuestions.length) {
+    setTimeout(() => showQuizCard(currentQuiz), 2500);  // Give user a little more time to see feedback
+  } else {
+    setTimeout(() => showCard(), 1500);
+  }
+}
+
+
+
+
+  const cards = [
+  {
+  title: "🌡️ Rising Water Temperature",
+  content: "Warming oceans affect marine ecosystems, weather patterns, and accelerate ice melting.",
+  quizQ: "What is one major consequence of rising ocean temperatures?",
+  options: ["More fish", "Accelerated glacier melting", "Thicker sea ice"],
+  answer: 1
+},
+{
+  title: "❄️ Melting Glaciers",
+  content: "Glaciers around the world are shrinking, contributing to sea level rise.",
+  quizQ: "Why are melting glaciers a concern for our planet?",
+  options: ["They create more snow", "They increase sea levels", "They cool the oceans"],
+  answer: 1
+},
+{
+  title: "📉 Melting Ice Sheets",
+  content: "Ice sheets in Greenland and Antarctica are losing mass, causing global sea level rise.",
+  quizQ: "Which regions are losing large ice sheets due to warming?",
+  options: ["Australia and India", "Greenland and Antarctica", "Europe and Asia"],
+  answer: 1
+},
+{
+  title: "🌊 Sea Level Rise",
+  content: "Sea level rise threatens coastal communities and ecosystems around the world.",
+  quizQ: "What causes sea level to rise?",
+  options: ["Ocean acidification", "Melting land ice and warming seas", "Tides"],
+  answer: 1
+}
+
+  ];
+
+  let currentCardIndex = 0;
+
+  function showCard() {
+    const card = cards[currentCardIndex];
+    left.innerHTML = `
+      <h2>🎓 Climate Learning Challenge</h2>
+      <p style="font-size: 0.95rem; margin-bottom: 1rem;">
+      Discover how Earth's changing climate affects us and test your knowledge after each topic!
+      </p>
+      <div class="quiz-card" style="width: 300px;">
+        <h3>${card.title}</h3>
+        <p>${card.content}</p>
+        <strong>${card.quizQ}</strong><br>
+        ${card.options.map((opt, i) => 
+          `<button onclick="checkCardAnswer(${i})">${opt}</button>`
+        ).join("<br>")}
+        <div id="card-feedback" class="feedback"></div>
+      </div>
+    `;
+  }
+
+  function checkCardAnswer(selected) {
+    const correct = cards[currentCardIndex].answer;
+    const feedback = document.getElementById("card-feedback");
+    if (selected === correct) {
+      feedback.textContent = "🎉 Correct! Great job!";
+      feedback.className = "feedback correct";
+
+      // Delay before showing next card
+    }else {
+    const correctAnswerText = cards[currentCardIndex].options[correct];
+    feedback.textContent = `❌ Oops! Correct answer is: ${correctAnswerText}`;
+    feedback.className = "feedback incorrect";
+  }
+        
+        currentCardIndex++;
+        if (currentCardIndex < cards.length) {
+          setTimeout(() => showCard(currentCardIndex), 2500);
+        } else {
+    // Wait a moment, then show the circle game
+    setTimeout(() => {
+      showhiddenMessage();
+    }, 1500);
+  }
+      
+  }
+
+
+
+let visitedCards = new Set(); // Track which cards were clicked
+
+const hiddenImpactCards = [
+  {
+    img: "droughts.jpg",
+    alt: "Droughts",
+    info: "Droughts reduce water availability and affect agriculture, ecosystems, and drinking supplies."
+  },
+  {
+    img: "wildfires.jpg",
+    alt: "Wildfires",
+    info: "Wildfires are intensified by dry conditions and heat, destroying habitats and increasing air pollution."
+  },
+  {
+    img: "flooding.jpg",
+    alt: "River Flooding",
+    info: "River flooding displaces communities and damages crops and infrastructure due to heavy rainfall or melting ice."
+  },
+  {
+    img: "heatwaves.jpg",
+    alt: "Heatwaves",
+    info: "Heatwaves cause health risks like heatstroke and worsen droughts and wildfires."
+  },
+  {
+    img: "cyclones.jpg",
+    alt: "Cyclones",
+    info: "Cyclones bring heavy rain, flooding, and destruction to coastal areas and are more intense with warmer oceans."
+  }
+];
+
+let hiddenCardIndex = 0;
+
+function showhiddenMessage() {
+  showNextHiddenCard();
+}
+
+function showNextHiddenCard() {
+  const card = hiddenImpactCards[hiddenCardIndex];
+
+  left.innerHTML = `
+    <h2>🌍 Climate Impact Cards</h2>
+    <p>🔍 Click the image to reveal hidden info. Learn step by step.</p>
+    <div class="impact-card" onclick="revealHiddenInfo()">
+      <img src="${card.img}" alt="${card.alt}">
+      <p class="hidden-info" style="display: none;">${card.info}</p>
+    </div>
+  `;
+}
+
+function revealHiddenInfo() {
+  const infoPara = document.querySelector('.hidden-info');
+  if (infoPara.style.display !== 'block') {
+    infoPara.style.display = 'block';
+
+    // Wait, then show the next card
+    hiddenCardIndex++;
+    if (hiddenCardIndex < hiddenImpactCards.length) {
+      setTimeout(() => {
+        showNextHiddenCard();
+      }, 2000);
+    } else {
+      // After last one, move to circle effect
+      setTimeout(() => {
+        showClimateEffectCircle();
+      }, 2000);
+    }
+  }
+}
+
+
+
+
+
+function showClimateEffectCircle() {
+  const effects = [
+    {
+      img: "access.jpg",
+      alt: "Access to Freshwater",
+      title: "Access to Freshwater",
+      desc: "Climate change reduces freshwater availability due to droughts and altered rainfall."
+    },
+    {
+      img: "crops.jpg",
+      alt: "Reduced Crop Yields",
+      title: "Reduced Crop Yields",
+      desc: "Increased temperatures and weather variability impact agricultural productivity."
+    },
+    {
+      img: "famine.jpg",
+      alt: "Famine",
+      title: "Famine",
+      desc: "Food shortages become more common in vulnerable regions due to crop failures."
+    },
+    {
+      img: "displacement.jpg",
+      alt: "Population Displacement",
+      title: "Population Displacement",
+      desc: "Floods, droughts, and storms force people to migrate."
+    },
+    {
+      img: "health.jpg",
+      alt: "Human Health",
+      title: "Human Health",
+      desc: "Heatwaves and disease spread from climate shifts threaten human health."
+    },
+    {
+      img: "conflict.jpg",
+      alt: "Armed Conflicts",
+      title: "Armed Conflicts",
+      desc: "Resource scarcity can intensify social and political tensions."
+    },
+    {
+      img: "inequality.jpg",
+      alt: "Growing Inequality",
+      title: "Growing Inequality",
+      desc: "Vulnerable communities face the greatest climate risks with the least resources."
+    }
+  ];
+
+  let current = 0;
+
+  // Add intro content
+  left.innerHTML = `
+    <h2>🌍 Climate's Impact on Humanity</h2>
+    <p style="font-size: 0.95rem; color: #444;">
+      Tap each image to discover how climate change affects our world.
+    </p>
+    <div class="circle-wrapper">
+      <div id="circle-container" class="circle-container"></div>
+    </div>
+  `;
+
+  const container = document.getElementById("circle-container");
+
+  function showNextEffectCard() {
+    // Clear previous content
+    container.innerHTML = "";
+
+    if (current >= effects.length) {
+      // All cards shown — show Done button
+      container.innerHTML = `
+        <div style="text-align: center; margin-top: 20px;">
+          <button onclick="showFinalMessage()" style="padding: 10px 20px; font-size: 16px;">✅ Done</button>
+        </div>`;
+      return;
+    }
+
+    // Create new card
+    const item = effects[current];
+    const card = document.createElement('div');
+    card.className = 'effect-card active';
+    card.innerHTML = `
+      <img src="${item.img}" alt="${item.alt}">
+      <div class="info">
+        <h4>${item.title}</h4>
+        <p>${item.desc}</p>
+      </div>
+    `;
+    container.appendChild(card);
+
+    const info = card.querySelector('.info');
+    info.style.display = "none";
+
+    card.addEventListener('click', () => {
+      info.style.display = "block"; // reveal info
+      card.classList.add('clicked');
+
+      setTimeout(() => {
+        current++;
+        showNextEffectCard(); // show next one
+      }, 1500); // wait 1.5 seconds before next
+    });
+  }
+
+  showNextEffectCard();
+}
+
+
+
+  function showFinalMessage() {
+    left.innerHTML = `
+      <h2>🌟 You’ve completed the journey!</h2>
+      <p>You've learned how CO₂ affects Earth and how to act. Be a green hero 🌱</p>
+      <img src="Green_earth.png" width="200" />
+      <p>You see, you took 2 steps to convert Earth! Our mission is to make Earth CO₂-free. Participate in our mission!</p>
+      <button onclick="window.location.href='/contact-us'">Contact Us</button>
+      <p>Or scroll down to learn more!</p>
+    `;
+  }
+  
+
+  
+</script>
+<!-- ✅ Bootstrap JS Bundle (required for navbar toggle) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html> 
+
+<!-- mongodb+srv://test_fm:<db_password>@test.al89zkk.mongodb.net/ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
