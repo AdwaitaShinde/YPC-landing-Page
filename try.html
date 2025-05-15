@@ -118,7 +118,7 @@ html, body {
 }
 
 .left {
-  background-color: #d7d59a; /* Light eco-mint */
+  background-color: #d4d28f; /* Light eco-mint */
   overflow-y: auto;
   border-right: 2px solid black;
 }
@@ -442,21 +442,23 @@ input, textarea {
   align-items: center;
   margin: 30px auto;
   width: 100%;
+  height: 600px;
+  border-radius: 50%;
 }
 
 .circle-container {
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  border: 4px solid #a0d2eb;
+  width: 100px;
+  height: 100px;
+  
+  border: 4px solid #00acc1;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   flex-direction: column;
-  gap: 20px;
-  padding: 20px;
-  background: #f0faff;
+  /* gap: 20px; */
+  /* padding: 20px; */
+  background: white;
 }
 
 .effect-card {
@@ -495,6 +497,17 @@ input, textarea {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+
+
+
+footer{
+  background-color: #537D5D; color: white; padding: 40px 20px;
+}
+
+
+
+
 
 
 
@@ -703,8 +716,8 @@ input, textarea {
 
   <div class="right">
       <div class="image-container">
-          <img src="download (1).jpg" class="image" id="img1">
-          <img src="download.jpg" class="image" id="img2">
+          <img src="Images/main_image1.webp" class="image" id="img1">
+          <img src="Images/main_image2.webp" class="image" id="img2">
       </div>
 
 
@@ -715,6 +728,61 @@ input, textarea {
     <button onclick="startMission()">Start Journey</button>
   </div>
 </div>
+
+
+<!-- 🌿 Our Story Section -->
+<!-- 🌿 Our Story Section -->
+<section id="our-story" style="padding: 60px 20px; background-color: #d7d59a;">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h2>🌱 Our Story</h2>
+        <p>
+          We started with a mission to educate and empower people on climate change. 
+          From awareness to action, our journey continues with your support.
+        </p>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="Images/Our_story (1).webp" alt="Our Story Image" class="img-fluid rounded" style="max-width: 90%;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 💚 Our Mission Section -->
+<section id="our-mission" style="padding: 60px 20px; background-color: #d4d28f;">
+  <div class="container">
+    <div class="row align-items-center flex-md-row-reverse">
+      <div class="col-md-6">
+        <h2>🌍 Our Mission</h2>
+        <p>
+          Our mission is to make Earth carbon-free by encouraging conscious digital habits and sustainable actions. 
+          Join us to make the world greener!
+        </p>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="Images/Our_mission.webp" alt="Our Mission Image" class="img-fluid rounded" style="max-width: 90%;">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 📞 Footer Section -->
+<footer>
+  <div class="container text-center">
+    <h4>🌎 Yujir Planet Competencies</h4>
+    <p>Contact us: +91 98765 43210 | info@yujirplanet.org</p>
+    <p>123 Green Lane, Sustainability City, India</p>
+    <div style="margin-top: 20px;">
+      <a href="#" style="color:white; margin: 0 10px;"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="#" style="color:white; margin: 0 10px;"><i class="fab fa-twitter fa-lg"></i></a>
+      <a href="#" style="color:white; margin: 0 10px;"><i class="fab fa-instagram fa-lg"></i></a>
+      <a href="#" style="color:white; margin: 0 10px;"><i class="fab fa-youtube fa-lg"></i></a>
+    </div>
+  </div>
+</footer>
+
 
 
 
@@ -755,7 +823,7 @@ if (width > 1024) {
   function showEarthConversionStep() {
     let earthHTML = 
       `<div style="text-align:center;" class="earth-container">
-        <img class="earth-img" src="Earth.png" width="200">
+        <img class="earth-img" src="Images/Earth.webp" width="200">
         <p><strong>🌿 Change Earth to Full Green</strong></p>
         <button onclick="showForm()">Convert Earth</button>
       </div>`;
@@ -786,27 +854,27 @@ if (width > 1024) {
   <div class="activity-container">
     <div class="activity-items" id="activityItems">
       <div class="activity" draggable="true" ondragstart="drag(event)" id="fossilFuels">
-        <img src="images/fossil-fuels.jpg" alt="Burning Fossil Fuels" />
+        <img src="images/fossil-fuels.webp" alt="Burning Fossil Fuels" />
         <p>Burning Fossil Fuels</p>
       </div>
       <div class="activity" draggable="true" ondragstart="drag(event)" id="urbanization">
-        <img src="images/construction.jpg" alt="Construction & Urbanization" />
+        <img src="images/construction.webp" alt="Construction & Urbanization" />
         <p>Construction & Urbanization</p>
       </div>
       <div class="activity" draggable="true" ondragstart="drag(event)" id="transport">
-        <img src="images/transport.jpg" alt="Heavy Transport" />
+        <img src="images/transport.webp" alt="Heavy Transport" />
         <p>Heavy Transport</p>
       </div>
       <div class="activity" draggable="true" ondragstart="drag(event)" id="agriculture">
-        <img src="images/agriculture.jpg" alt="Over-farming" />
+        <img src="images/agriculture.webp" alt="Over-farming" />
         <p>Over-farming</p>
       </div>
       <div class="activity" draggable="true" ondragstart="drag(event)" id="treePlanting">
-        <img src="images/tree-planting.jpg" alt="Tree Planting" />
+        <img src="images/tree-planting.webp" alt="Tree Planting" />
         <p>Tree Planting</p>
       </div>
       <div class="activity" draggable="true" ondragstart="drag(event)" id="cycling">
-        <img src="images/cycling.jpg" alt="Cycling" />
+        <img src="images/Cycling.webp" alt="Cycling" />
         <p>Cycling</p>
       </div>
     </div>
@@ -854,30 +922,6 @@ function checkIfAllHarmfulDropped() {
     document.getElementById("nextToQuiz").classList.remove("hidden");
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   // function showDragDropActivity() {
   //   left.innerHTML += 
@@ -928,41 +972,41 @@ const quizQuestions = [
     options: ["Planting trees", "Burning fossil fuels", "Ocean currents"],
     answer: 1
   },
-  {
-    question: "📈 What does an increase in atmospheric CO₂ lead to?",
-    options: ["Global cooling", "Decrease in sea levels", "Additional greenhouse effect"],
-    answer: 2
-  },
-  {
-    question: "🔁 What role do carbon sinks play in the climate system?",
-    options: ["Emit carbon", "Store and absorb CO₂", "Increase acidification"],
-    answer: 1
-  },
-  {
-    question: "🌊 What does increased CO₂ in the atmosphere cause in the ocean?",
-    options: ["Ocean warming", "Ocean acidification", "Increased salinity"],
-    answer: 1
-  },
-  {
-    question: "🦪 What problem does ocean acidification create for marine life?",
-    options: ["Helps fish breathe", "Causes coral bleaching", "Makes calcification harder for shells"],
-    answer: 2
-  },
-  {
-    question: "❄️ What does melting permafrost release?",
-    options: ["Oxygen", "Methane and CO₂", "Water vapor only"],
-    answer: 1
-  },
-  {
-    question: "🔬 Which organisms are sensitive to ocean acidification?",
-    options: ["Jellyfish", "Pteropods and coccolithophores", "Sharks"],
-    answer: 1
-  },
-  {
-    question: "🧬 How does reduced calcification affect biodiversity?",
-    options: ["Improves food webs", "Destroys marine habitats", "No impact"],
-    answer: 1
-  },
+  // {
+  //   question: "📈 What does an increase in atmospheric CO₂ lead to?",
+  //   options: ["Global cooling", "Decrease in sea levels", "Additional greenhouse effect"],
+  //   answer: 2
+  // },
+  // {
+  //   question: "🔁 What role do carbon sinks play in the climate system?",
+  //   options: ["Emit carbon", "Store and absorb CO₂", "Increase acidification"],
+  //   answer: 1
+  // },
+  // {
+  //   question: "🌊 What does increased CO₂ in the atmosphere cause in the ocean?",
+  //   options: ["Ocean warming", "Ocean acidification", "Increased salinity"],
+  //   answer: 1
+  // },
+  // {
+  //   question: "🦪 What problem does ocean acidification create for marine life?",
+  //   options: ["Helps fish breathe", "Causes coral bleaching", "Makes calcification harder for shells"],
+  //   answer: 2
+  // },
+  // {
+  //   question: "❄️ What does melting permafrost release?",
+  //   options: ["Oxygen", "Methane and CO₂", "Water vapor only"],
+  //   answer: 1
+  // },
+  // {
+  //   question: "🔬 Which organisms are sensitive to ocean acidification?",
+  //   options: ["Jellyfish", "Pteropods and coccolithophores", "Sharks"],
+  //   answer: 1
+  // },
+  // {
+  //   question: "🧬 How does reduced calcification affect biodiversity?",
+  //   options: ["Improves food webs", "Destroys marine habitats", "No impact"],
+  //   answer: 1
+  // },
 
 ];
 
@@ -1026,27 +1070,27 @@ function checkAnswer(qIndex, chosen) {
   options: ["More fish", "Accelerated glacier melting", "Thicker sea ice"],
   answer: 1
 },
-{
-  title: "❄️ Melting Glaciers",
-  content: "Glaciers around the world are shrinking, contributing to sea level rise.",
-  quizQ: "Why are melting glaciers a concern for our planet?",
-  options: ["They create more snow", "They increase sea levels", "They cool the oceans"],
-  answer: 1
-},
-{
-  title: "📉 Melting Ice Sheets",
-  content: "Ice sheets in Greenland and Antarctica are losing mass, causing global sea level rise.",
-  quizQ: "Which regions are losing large ice sheets due to warming?",
-  options: ["Australia and India", "Greenland and Antarctica", "Europe and Asia"],
-  answer: 1
-},
-{
-  title: "🌊 Sea Level Rise",
-  content: "Sea level rise threatens coastal communities and ecosystems around the world.",
-  quizQ: "What causes sea level to rise?",
-  options: ["Ocean acidification", "Melting land ice and warming seas", "Tides"],
-  answer: 1
-}
+// {
+//   title: "❄️ Melting Glaciers",
+//   content: "Glaciers around the world are shrinking, contributing to sea level rise.",
+//   quizQ: "Why are melting glaciers a concern for our planet?",
+//   options: ["They create more snow", "They increase sea levels", "They cool the oceans"],
+//   answer: 1
+// },
+// {
+//   title: "📉 Melting Ice Sheets",
+//   content: "Ice sheets in Greenland and Antarctica are losing mass, causing global sea level rise.",
+//   quizQ: "Which regions are losing large ice sheets due to warming?",
+//   options: ["Australia and India", "Greenland and Antarctica", "Europe and Asia"],
+//   answer: 1
+// },
+// {
+//   title: "🌊 Sea Level Rise",
+//   content: "Sea level rise threatens coastal communities and ecosystems around the world.",
+//   quizQ: "What causes sea level to rise?",
+//   options: ["Ocean acidification", "Melting land ice and warming seas", "Tides"],
+//   answer: 1
+// }
 
   ];
 
@@ -1103,30 +1147,30 @@ let visitedCards = new Set(); // Track which cards were clicked
 
 const hiddenImpactCards = [
   {
-    img: "droughts.jpg",
+    img: "images/droughts.webp",
     alt: "Droughts",
     info: "Droughts reduce water availability and affect agriculture, ecosystems, and drinking supplies."
   },
-  {
-    img: "wildfires.jpg",
-    alt: "Wildfires",
-    info: "Wildfires are intensified by dry conditions and heat, destroying habitats and increasing air pollution."
-  },
-  {
-    img: "flooding.jpg",
-    alt: "River Flooding",
-    info: "River flooding displaces communities and damages crops and infrastructure due to heavy rainfall or melting ice."
-  },
-  {
-    img: "heatwaves.jpg",
-    alt: "Heatwaves",
-    info: "Heatwaves cause health risks like heatstroke and worsen droughts and wildfires."
-  },
-  {
-    img: "cyclones.jpg",
-    alt: "Cyclones",
-    info: "Cyclones bring heavy rain, flooding, and destruction to coastal areas and are more intense with warmer oceans."
-  }
+  // {
+  //   img: "images/wildfires.webp",
+  //   alt: "Wildfires",
+  //   info: "Wildfires are intensified by dry conditions and heat, destroying habitats and increasing air pollution."
+  // },
+  // {
+  //   img: "images/flooding.webp",
+  //   alt: "River Flooding",
+  //   info: "River flooding displaces communities and damages crops and infrastructure due to heavy rainfall or melting ice."
+  // },
+  // {
+  //   img: "images/heatwaves.webp",
+  //   alt: "Heatwaves",
+  //   info: "Heatwaves cause health risks like heatstroke and worsen droughts and wildfires."
+  // },
+  // {
+  //   img: "images/cyclones.webp",
+  //   alt: "Cyclones",
+  //   info: "Cyclones bring heavy rain, flooding, and destruction to coastal areas and are more intense with warmer oceans."
+  // }
 ];
 
 let hiddenCardIndex = 0;
@@ -1141,8 +1185,8 @@ function showNextHiddenCard() {
   left.innerHTML = `
     <h2>🌍 Climate Impact Cards</h2>
     <p>🔍 Click the image to reveal hidden info. Learn step by step.</p>
-    <div class="impact-card" onclick="revealHiddenInfo()">
-      <img src="${card.img}" alt="${card.alt}">
+    <div class="impact-card" onclick="revealHiddenInfo()"  style="background-color: white;">
+      <img src="${card.img}" alt="${card.alt}" style="width:200px; height:200px">
       <p class="hidden-info" style="display: none;">${card.info}</p>
     </div>
   `;
@@ -1158,7 +1202,7 @@ function revealHiddenInfo() {
     if (hiddenCardIndex < hiddenImpactCards.length) {
       setTimeout(() => {
         showNextHiddenCard();
-      }, 2000);
+      }, 5000);
     } else {
       // After last one, move to circle effect
       setTimeout(() => {
@@ -1175,43 +1219,43 @@ function revealHiddenInfo() {
 function showClimateEffectCircle() {
   const effects = [
     {
-      img: "access.jpg",
+      img: "images/access.webp",
       alt: "Access to Freshwater",
       title: "Access to Freshwater",
       desc: "Climate change reduces freshwater availability due to droughts and altered rainfall."
     },
     {
-      img: "crops.jpg",
+      img: "images/crops.webp",
       alt: "Reduced Crop Yields",
       title: "Reduced Crop Yields",
       desc: "Increased temperatures and weather variability impact agricultural productivity."
     },
     {
-      img: "famine.jpg",
+      img: "images/famine.webp",
       alt: "Famine",
       title: "Famine",
       desc: "Food shortages become more common in vulnerable regions due to crop failures."
     },
     {
-      img: "displacement.jpg",
+      img: "images/displacement.webp",
       alt: "Population Displacement",
       title: "Population Displacement",
       desc: "Floods, droughts, and storms force people to migrate."
     },
     {
-      img: "health.jpg",
+      img: "images/health.webp",
       alt: "Human Health",
       title: "Human Health",
       desc: "Heatwaves and disease spread from climate shifts threaten human health."
     },
     {
-      img: "conflict.jpg",
+      img: "images/conflict.webp",
       alt: "Armed Conflicts",
       title: "Armed Conflicts",
       desc: "Resource scarcity can intensify social and political tensions."
     },
     {
-      img: "inequality.jpg",
+      img: "images/inequality.webp",
       alt: "Growing Inequality",
       title: "Growing Inequality",
       desc: "Vulnerable communities face the greatest climate risks with the least resources."
@@ -1226,7 +1270,7 @@ function showClimateEffectCircle() {
     <p style="font-size: 0.95rem; color: #444;">
       Tap each image to discover how climate change affects our world.
     </p>
-    <div class="circle-wrapper">
+    <div class="circle-wrapper"  style="background-color: white;">
       <div id="circle-container" class="circle-container"></div>
     </div>
   `;
@@ -1269,7 +1313,7 @@ function showClimateEffectCircle() {
       setTimeout(() => {
         current++;
         showNextEffectCard(); // show next one
-      }, 1500); // wait 1.5 seconds before next
+      }, 4000); // wait 1.5 seconds before next
     });
   }
 
@@ -1282,7 +1326,7 @@ function showClimateEffectCircle() {
     left.innerHTML = `
       <h2>🌟 You’ve completed the journey!</h2>
       <p>You've learned how CO₂ affects Earth and how to act. Be a green hero 🌱</p>
-      <img src="Green_earth.png" width="200" />
+      <img src="Images/Green_earth.webp" width="200" />
       <p>You see, you took 2 steps to convert Earth! Our mission is to make Earth CO₂-free. Participate in our mission!</p>
       <button onclick="window.location.href='/contact-us'">Contact Us</button>
       <p>Or scroll down to learn more!</p>
@@ -1294,12 +1338,13 @@ function showClimateEffectCircle() {
 </script>
 <!-- ✅ Bootstrap JS Bundle (required for navbar toggle) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 
 
 </body>
 </html> 
 
-<!-- mongodb+srv://test_fm:<db_password>@test.al89zkk.mongodb.net/ -->
 
 
 
